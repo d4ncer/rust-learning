@@ -7,6 +7,10 @@ fn main() {
     arrays();
     fns1(50);
     ifs(12);
+    loopels();
+    liftoff();
+    iterz();
+    liftoff2();
 }
 
 fn basic() {
@@ -95,4 +99,45 @@ fn ifs(x: i32) {
     let j = if x < 12 { "yo" } else { "what" };
 
     println!("{}", j);
+}
+
+fn loopels() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("result is {}, counter is {}", result, counter);
+}
+
+fn liftoff() {
+    let mut n = 3;
+
+    while n != 0 {
+        println!("{}!", n);
+        n -= 1;
+    }
+
+    println!("wooooooo");
+}
+
+fn iterz() {
+    let a = [1, 2, 3, 4, 5];
+
+    for element in a.iter() {
+        println!("{}", element);
+    }
+}
+
+fn liftoff2() {
+    for i in (1..4).rev() {
+        println!("{}!", i);
+    }
+
+    println!("wooooooo");
 }
