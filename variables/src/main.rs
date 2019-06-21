@@ -11,6 +11,8 @@ fn main() {
     liftoff();
     iterz();
     liftoff2();
+    println!("87.29123F is {}C", ftoc(87.29123));
+    println!("fib 30 is {}", fib(30));
 }
 
 fn basic() {
@@ -140,4 +142,28 @@ fn liftoff2() {
     }
 
     println!("wooooooo");
+}
+
+fn ftoc(f: f64) -> f64 {
+    (f - 32.0) / 1.8
+}
+
+fn fib(n: i32) -> usize {
+    if n < 0 {
+        panic!("{} is negative", n);
+    } else if n == 0 {
+        panic!("{} is 0");
+    } else if n == 1 {
+        return 1;
+    }
+
+    let mut sum = 0;
+    let mut last = 0;
+    let mut curr = 1;
+    for _i in 1..n {
+        sum = last + curr;
+        last = curr;
+        curr = sum;
+    }
+    sum
 }
