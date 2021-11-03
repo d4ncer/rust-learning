@@ -152,7 +152,7 @@ fn fib(n: i32) -> usize {
     if n < 0 {
         panic!("{} is negative", n);
     } else if n == 0 {
-        panic!("{} is 0");
+        panic!("{} is 0", n);
     } else if n == 1 {
         return 1;
     }
