@@ -1,7 +1,0 @@
-[package]
-name = "error_handling"
-version = "0.1.0"
-authors = ["Raghuvir Kasturi <raghuvir.kasturi@gmail.com>"]
-edition = "2018"
-
-[dependencies]
