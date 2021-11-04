@@ -12,13 +12,16 @@ fn main() {
         let mut input = String::new();
 
         match io::stdin().read_line(&mut input) {
-            Ok(_n) => {
+            Ok(_) => {
                 println!("you guessed {}", input);
             }
-            Err(_) => continue,
+            Err(error) => {
+                println!("failed to read line: {}", error);
+                break;
+            }
         }
 
-        let input = match input.trim_end().parse::<u32>() {
+        let input = match input.trim().parse::<u32>() {
             Ok(n) => n,
             Err(_) => continue,
         };
